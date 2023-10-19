@@ -39,7 +39,7 @@ body {
     background-size: 816px 100%;
     background-color: rgba(255, 255, 255, 0.2);
     /* Ajusta el último valor (0.8) para la transparencia deseada */
-    
+
 }
 
 .hidden {
@@ -76,7 +76,7 @@ button {
     cursor: pointer;
 }
 
-#pergamino {
+.pergamino {
     display: inline-flex;
     flex-direction: row;
     text-align: center;
@@ -87,7 +87,26 @@ button {
     align-items: center;
     justify-content: center;
     background: url("images/pergamino.png");
-} 
+}
+
+#restartButton {
+    margin-top: 20px;
+    /* Espacio entre el mensaje de Game Over y el botón */
+}
+
+#tiempoRestante {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
 
 #cielo {
     height: 100%;
@@ -160,12 +179,19 @@ button {
     height: 70px;
     background: url("images/enemie2.png") repeat-x;
     transition: all .02s ease-in-out;
-    animation: enemigo 2.5s  linear forwards, volarEnemigo .6s steps(4) infinite;
+    animation: enemigo 2.5s linear forwards, volarEnemigo .6s steps(4) infinite;
 }
 
 @keyframes volarEnemigo {
-    from { background-position: 0px }
-    to { background-position: 298px };
+    from {
+        background-position: 0px
+    }
+
+    to {
+        background-position: 298px
+    }
+
+    ;
 }
 
 @keyframes enemigo {
@@ -189,6 +215,13 @@ button {
 }
 
 @keyframes volarMoneda {
-    from { background-position: 0px }
-    to { background-position: 188px };
+    from {
+        background-position: 0px
+    }
+
+    to {
+        background-position: 188px
+    }
+
+    ;
 }

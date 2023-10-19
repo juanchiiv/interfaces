@@ -23,19 +23,24 @@
 
     <div id="contenedor" class="hidden">
         <div id="cielo"></div>
+        <div id="tiempoRestante">Tiempo restante: <span id="contadorTiempo">60</span> segundos</div>
         <div id="personaje" class="correr"></div>
         <div id="piso"></div>
     </div>
 
     <div id="howToPlay" class="hidden menu">
-        <h2 id="pergamino">Bienvenido, las instrucciones son sencillas, solo tienes que derrotar la mayor cantidad de enemigos
+        <h2 class="pergamino">Bienvenido, las instrucciones son sencillas, solo tienes que derrotar la mayor cantidad de
+            enemigos
             antes de que se te acabe el tiempo
         </h2>
     </div>
 
+
     <div id="gameOver" class="hidden menu">
-        <h1 id="pergamino">¡GAME OVER!
-        </h1>
+        <div class="pergamino">
+            <h1>¡GAME OVER!</h1>
+            <button id="restartButton">Reiniciar</button>
+        </div>
     </div>
 
     <script src="js/Personaje.js"></script>

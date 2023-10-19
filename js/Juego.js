@@ -8,6 +8,7 @@ class Juego {
         this.monedas = [];
         this.endGame = false;
         this.game_loop = null;
+        this.tiempo_restante = 60;
     }
 
     /**
@@ -21,6 +22,19 @@ class Juego {
 
     gameLoop() {
         if (!this.endGame) {
+
+            this.tiempo_restante -= 1 / 60;
+
+            const tiempoFormateado = Math.round(this.tiempo_restante);
+
+            const contadorTiempoElement = document.getElementById("contadorTiempo");
+            contadorTiempoElement.textContent = tiempoFormateado;
+
+            if (this.tiempo_restante < 0) {
+                this.stopGame();
+                return;
+            }
+
             const rect1 = this.player.status();
             //Colision con enemigos
             for (let i = 0; i < this.enemigos.length - 1; i++) {
@@ -39,10 +53,9 @@ class Juego {
                 const rect2 = this.monedas[i].status();
                 // Verificar si hay colisión
                 if (this.checkCollision(rect1, rect2)) {
-                    console.log('Agarre moneda');
+                    this.tiempo_restante += 10;
                     this.remove(this.monedas[i])
                     this.limpiarDelArreglo(this.monedas[i])
-                    //TODO agregar tiempo extra
                 }
             }
             requestAnimationFrame(this.gameLoop.bind(this));
@@ -50,12 +63,26 @@ class Juego {
     }
 
     stopGame() {
-        // let adversario = this.checkCollision();
-        // if (adversario != null) {
-        console.log('Game Over');
-        //     this.endGame = true;
-        //     this.remove();
-        // }
+        this.endGame = true;
+        this.showGameOverScreen(); // Función para mostrar la pantalla de "Game Over"
+        this.clearGameElements();  // Función para limpiar elementos del juego
+    }
+
+    showGameOverScreen() {
+        const gameOverElement = document.getElementById("gameOver");
+        const restartButton = document.getElementById("restartButton");
+        gameOverElement.style.display = "block"; // Muestra la pantalla de "Game Over"
+        restartButton.addEventListener("click", () => {
+            location.reload(); // Recarga la página para reiniciar el juego
+        });
+    }
+
+    clearGameElements() {
+        // Elimina elementos del juego aquí
+        const gameElements = document.getElementById("contenedor");
+        while (gameElements.firstChild) {
+            gameElements.removeChild(gameElements.firstChild);
+        }
     }
 
     /**
