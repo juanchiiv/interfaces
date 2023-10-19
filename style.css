@@ -1,0 +1,186 @@
+body {
+    margin: 0;
+    max-height: 100%;
+}
+
+#contenedor,
+#cielo,
+#piso {
+    width: 100%;
+}
+
+#contenedor {
+    height: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+body {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background-size: cover;
+    /* Cubre el contenedor por completo */
+    background-position: center;
+    /* Centra el fondo */
+    background-attachment: fixed;
+    /* Fija el fondo */
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    background: url("images/background-sky.png") repeat-x;
+    background-size: 816px 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Ajusta el último valor (0.8) para la transparencia deseada */
+    
+}
+
+.hidden {
+    display: none;
+}
+
+button {
+    font-size: 16px;
+    margin: 10px;
+    border-radius: 10%;
+}
+
+#playButton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+#howToPlayButton {
+    background-color: #008CBA;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+#musicButton {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+#pergamino {
+    display: inline-flex;
+    flex-direction: row;
+    text-align: center;
+    height: 544px;
+    width: 800px;
+    position: relative;
+    top: 15%;
+    align-items: center;
+    justify-content: center;
+    background: url("images/pergamino.png");
+} 
+
+#cielo {
+    height: 100%;
+    background: url("images/background-sky.png") repeat-x;
+    background-size: 816px 100%;
+    position: absolute;
+    animation: sky 15s linear infinite;
+}
+
+@keyframes sky {
+    0% {
+        background-position: 816px
+    }
+
+    100% {
+        background-position: 0
+    }
+}
+
+#piso {
+    height: 20%;
+    background: url("images/clouds-floor.png") repeat-x;
+    background-color: rgba(255, 0, 0, 0);
+    background-size: 998px 100%;
+    animation: floor 2s linear infinite;
+    position: absolute;
+    bottom: 0px;
+    z-index: 0;
+}
+
+@keyframes floor {
+    0% {
+        background-position: 998px
+    }
+
+    100% {
+        background-position: 0
+    }
+}
+
+#personaje {
+    width: 56px;
+    height: 54px;
+    z-index: 1;
+    position: absolute;
+    bottom: 50%;
+    left: 100px;
+    transition: all .02s ease-in-out;
+    background: url("images/dragon-fly.png") repeat-x;
+}
+
+.volar {
+    animation: volar .6s steps(4) infinite;
+}
+
+@keyframes volar {
+    0% {
+        background-position: 0
+    }
+
+    100% {
+        background-position: 228px
+    }
+}
+
+.enemigo {
+    display: inline-block;
+    position: absolute;
+    width: 74.5px;
+    height: 70px;
+    background: url("images/enemie2.png") repeat-x;
+    transition: all .02s ease-in-out;
+    animation: enemigo 2.5s  linear forwards;
+}
+
+
+
+@keyframes enemigo {
+    from {
+        left: 100%;
+    }
+
+    to {
+        left: -10%;
+    }
+}
+
+.moneda {
+    display: inline-block;
+    position: absolute;
+    width: 31.3px;
+    height: 38px;
+    background: url("images/moneda.png") repeat-x;
+    transition: all .02s ease-in-out;
+    animation: enemigo 2.5s linear forwards;
+}

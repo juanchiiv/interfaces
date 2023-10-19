@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animacion</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="menu" class="menu">
+        <h1>Dragon Quest</h1>
+        <div>
+            <button id="playButton">Play</button>
+            <button id="howToPlayButton">How To Play</button>
+            <button id="musicButton">Music</button>
+        </div>
+    </div>
+
+    <div id="contenedor" class="hidden">
+        <div id="cielo"></div>
+        <div id="personaje" class="correr"></div>
+        <div id="piso"></div>
+    </div>
+
+    <div id="howToPlay" class="hidden menu">
+        <h2 id="pergamino">Bienvenido, las instrucciones son sencillas, solo tienes que derrotar la mayor cantidad de enemigos
+            antes de que se te acabe el tiempo
+        </h2>
+    </div>
+
+    <div id="gameOver" class="hidden menu">
+        <h1 id="pergamino">¡GAME OVER!
+        </h1>
+    </div>
+
+    <script src="js/Personaje.js"></script>
+    <script src="js/Player.js"></script>
+    <script src="js/Enemigo.js"></script>
+    <script src="js/Moneda.js"></script>
+    <script src="js/Juego.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
