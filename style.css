@@ -160,10 +160,13 @@ button {
     height: 70px;
     background: url("images/enemie2.png") repeat-x;
     transition: all .02s ease-in-out;
-    animation: enemigo 2.5s  linear forwards;
+    animation: enemigo 2.5s  linear forwards, volarEnemigo .6s steps(4) infinite;
 }
 
-
+@keyframes volarEnemigo {
+    from { background-position: 0px }
+    to { background-position: 298px };
+}
 
 @keyframes enemigo {
     from {
@@ -178,9 +181,14 @@ button {
 .moneda {
     display: inline-block;
     position: absolute;
-    width: 31.3px;
+    width: 31.4px;
     height: 38px;
     background: url("images/moneda.png") repeat-x;
     transition: all .02s ease-in-out;
-    animation: enemigo 2.5s linear forwards;
+    animation: enemigo 2.5s linear forwards, volarMoneda 2.5s steps(6) infinite;
+}
+
+@keyframes volarMoneda {
+    from { background-position: 0px }
+    to { background-position: 188px };
 }
