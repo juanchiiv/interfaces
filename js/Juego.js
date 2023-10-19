@@ -9,6 +9,7 @@ class Juego {
         this.endGame = false;
         this.game_loop = null;
         this.tiempo_restante = 60;
+        this.puntuacion = 0;
     }
 
     /**
@@ -29,6 +30,10 @@ class Juego {
 
             const contadorTiempoElement = document.getElementById("contadorTiempo");
             contadorTiempoElement.textContent = tiempoFormateado;
+
+            // Actualizo la puntuación en el DOM
+            const contadorPuntuacionElement = document.getElementById("contadorPuntuacion");
+            contadorPuntuacionElement.textContent = this.puntuacion;
 
             if (this.tiempo_restante < 0) {
                 this.stopGame();
@@ -54,6 +59,7 @@ class Juego {
                 // Verificar si hay colisión
                 if (this.checkCollision(rect1, rect2)) {
                     this.tiempo_restante += 10;
+                    this.puntuacion += 100;
                     this.remove(this.monedas[i])
                     this.limpiarDelArreglo(this.monedas[i])
                 }
@@ -70,11 +76,13 @@ class Juego {
 
     showGameOverScreen() {
         const gameOverElement = document.getElementById("gameOver");
+        const puntuacionElement = document.getElementById("puntuacionGameOver"); // Elemento para mostrar la puntuación
         const restartButton = document.getElementById("restartButton");
         gameOverElement.style.display = "block"; // Muestra la pantalla de "Game Over"
         restartButton.addEventListener("click", () => {
             location.reload(); // Recarga la página para reiniciar el juego
         });
+        puntuacionElement.textContent = "Puntuación: " + this.puntuacion;
     }
 
     clearGameElements() {

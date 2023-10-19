@@ -78,7 +78,7 @@ button {
 
 .pergamino {
     display: inline-flex;
-    flex-direction: row;
+    flex-direction: column;
     text-align: center;
     height: 544px;
     width: 800px;
@@ -90,6 +90,11 @@ button {
 }
 
 #restartButton {
+    background-color: sandybrown;
+    color: black;
+    padding: 10px 20px;
+    border: solid black 1px;
+    cursor: pointer;
     margin-top: 20px;
     /* Espacio entre el mensaje de Game Over y el botón */
 }
@@ -107,6 +112,23 @@ button {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
+
+#puntuacion {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-align: center;
+    margin-left: 275px;
+    font-size: 18px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
 
 #cielo {
     height: 100%;

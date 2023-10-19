@@ -24,22 +24,34 @@
     <div id="contenedor" class="hidden">
         <div id="cielo"></div>
         <div id="tiempoRestante">Tiempo restante: <span id="contadorTiempo">60</span> segundos</div>
+        <div id="puntuacion">Puntuación: <span id="contadorPuntuacion">0</span></div>
         <div id="personaje" class="correr"></div>
         <div id="piso"></div>
     </div>
 
     <div id="howToPlay" class="hidden menu">
-        <h2 class="pergamino">Bienvenido, las instrucciones son sencillas, solo tienes que derrotar la mayor cantidad de
-            enemigos
-            antes de que se te acabe el tiempo
-        </h2>
+        <div class="pergamino">
+            <h1>
+                How To Play
+            </h1>
+            <h3>
+                El Peronaje se mueve con 'ArrowUp' para subir y 'ArrowDown' para bajar.
+            </h3>
+            <h3>
+                Colisionar con un pájaro te hará perder la partida.
+            </h3>
+            <h3>
+                Agarrar ojos, te garantizará más tiempo extra y un mayor puntaje.
+            </h3>
+        </div>
     </div>
 
 
     <div id="gameOver" class="hidden menu">
         <div class="pergamino">
             <h1>¡GAME OVER!</h1>
-            <button id="restartButton">Reiniciar</button>
+            <h3 id="puntuacionGameOver"></h3>
+            <button id="restartButton">Volver al menu</button>
         </div>
     </div>
 
