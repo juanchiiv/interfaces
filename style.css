@@ -99,6 +99,15 @@ button {
     /* Espacio entre el mensaje de Game Over y el botón */
 }
 
+#atras {
+    background-color: sandybrown;
+    color: black;
+    padding: 10px 20px;
+    border: solid black 1px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
 #tiempoRestante {
     position: absolute;
     top: 10px;

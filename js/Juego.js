@@ -12,9 +12,8 @@ class Juego {
         this.puntuacion = 0;
     }
 
-    /**
- * Chequear estado del player y de los enemigos
- */
+    //Chequear estado del player y de los enemigos
+
     start() {
         this.gameLoop();
         this.generarEnemigosRandom();
